@@ -13,6 +13,8 @@ import {FormsModule} from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 // temporal
 import { IncrementadorComponent } from './../components/incrementador/incrementador.component';
+import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
+
 
 
 @NgModule({
@@ -22,18 +24,19 @@ import { IncrementadorComponent } from './../components/incrementador/incrementa
         Graficas1Component,
         PagesComponent,
         IncrementadorComponent,
-        GraficoDonaComponent
+        GraficoDonaComponent,
+        AccoutSettingsComponent
     ],
     exports: [
         DashboardComponent,
         ProgressComponent,
         Graficas1Component],
-        imports: [
+     imports: [
             SheredModule,
             PAGES_ROUTES,
             FormsModule,
             ChartsModule
-        ]
+        ],
 
 })
 
