@@ -11,7 +11,8 @@ menu: any = [
      submenu: [
        { titulo: 'Dashboard', url: '/dashboard' },
        { titulo: 'ProgressBar', url: '/progress' },
-       { titulo: 'Skill', url: '/graficas1' }
+       { titulo: 'Skill', url: '/graficas1' },
+       { titulo: 'Promesas', url: '/promesas' }
      ]
   }
  ];

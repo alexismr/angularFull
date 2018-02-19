@@ -14,6 +14,7 @@ import { ChartsModule } from 'ng2-charts';
 // temporal
 import { IncrementadorComponent } from './../components/incrementador/incrementador.component';
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
+import { PromesaComponent } from './promesa/promesa.component';
 
 
 
@@ -25,7 +26,8 @@ import { AccoutSettingsComponent } from './accout-settings/accout-settings.compo
         PagesComponent,
         IncrementadorComponent,
         GraficoDonaComponent,
-        AccoutSettingsComponent
+        AccoutSettingsComponent,
+        PromesaComponent
     ],
     exports: [
         DashboardComponent,
