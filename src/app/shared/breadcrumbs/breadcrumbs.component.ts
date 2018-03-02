@@ -23,6 +23,7 @@ export class BreadcrumbsComponent implements OnInit {
       this.label = data.titulo;
       this._title.setTitle(this.label );
 
+      // tslint:disable-next-line:prefer-const
       let metaTag: MetaDefinition = {
         name: 'description',
         content: this.label
