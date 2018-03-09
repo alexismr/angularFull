@@ -17,31 +17,30 @@ declare const gapi: any;
 export class LoginComponent implements OnInit {
 
   recuerdame: boolean = false;
-  email:string;
+  email: string;
 
   auth2: any;
 
   constructor(public route: Router,
-    public _usuarioService : UsuarioService
+    public _usuarioService: UsuarioService
   ) { }
 
   ngOnInit() {
     init_plugins();
     this.email = localStorage.getItem('email') || '';
 
-    if(this.email.length > 1){
+    if (this.email.length > 1) {
         this.recuerdame = true ;
     }
-    
     this.googleInit();
   }
 
 
-  googleInit(){
+  googleInit() {
     gapi.load('auth2', () => {
 
       this.auth2 = gapi.auth2.init({
-        client_id: '442737206823-dilej5tevnrv61sovd7bocf5qeafmjs3.apps.googleusercontent.com',
+        client_id: '920679266775-aacnnh28t0dbn4ifb2ffc7pkf9sfp8s7.apps.googleusercontent.com',
         cookiepolicy: 'single_host_origin',
         scope: 'profile email'
       });
@@ -55,10 +54,13 @@ export class LoginComponent implements OnInit {
 
   }
 
-  attachSignin( element){
+  attachSignin( element) {
     this.auth2.attachClickHandler( element, {}, (googleUser) => {
 
-      // let profile = googleUser.getBasicProfile();
+      let profile = googleUser.getBasicProfile();
+
+         console.log(JSON.stringify(profile));
+
       let token = googleUser.getAuthResponse().id_token;
 
       this._usuarioService.loginGoogle( token )
@@ -69,10 +71,12 @@ export class LoginComponent implements OnInit {
   }
 
   ingresar(forma: NgForm) {
-    if(forma.invalid)
-     return;
+    if (forma.invalid) {
+      return;
+    }
 
-    let usuario = new  Usuario(null,forma.value.email , forma.value.password );
+
+    let usuario = new  Usuario(null, forma.value.email , forma.value.password );
     this._usuarioService.login(usuario , forma.value.recuerdame)
     .subscribe(ok => this.route.navigate(['/dashboard']));
 

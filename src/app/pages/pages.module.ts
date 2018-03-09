@@ -16,6 +16,11 @@ import { IncrementadorComponent } from './../components/incrementador/incrementa
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 import { PromesaComponent } from './promesa/promesa.component';
 
+// pipe module
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
+import { CommonModule } from '@angular/common';
+
 
 
 @NgModule({
@@ -27,17 +32,20 @@ import { PromesaComponent } from './promesa/promesa.component';
         IncrementadorComponent,
         GraficoDonaComponent,
         AccoutSettingsComponent,
-        PromesaComponent
+        PromesaComponent,
+        ProfileComponent
     ],
     exports: [
         DashboardComponent,
         ProgressComponent,
         Graficas1Component],
      imports: [
+            CommonModule,
             SheredModule,
             PAGES_ROUTES,
             FormsModule,
-            ChartsModule
+            ChartsModule,
+            PipesModule
         ],
 
 })

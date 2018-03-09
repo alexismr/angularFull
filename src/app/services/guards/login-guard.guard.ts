@@ -5,12 +5,12 @@ import { UsuarioService } from '../usuario/usuario.service';
 
 @Injectable()
 export class LoginGuardGuard implements CanActivate {
- 
-  constructor( public _usuarioServices :UsuarioService ,  public router: Router){
+
+  constructor( public _usuarioServices: UsuarioService ,  public router: Router){
 
   }
- 
-  canActivate(){
+
+  canActivate() {
     if ( this._usuarioServices.estaLogueado() ) {
       console.log( 'PASO EL GUARD');
       return true;
@@ -20,6 +20,5 @@ export class LoginGuardGuard implements CanActivate {
       return false;
     }
   }
-  
 
 }

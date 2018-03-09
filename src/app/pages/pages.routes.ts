@@ -1,3 +1,4 @@
+import { ProfileComponent } from './profile/profile.component';
 import { PromesaComponent } from './promesa/promesa.component';
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 import { RouterModule,  Routes } from '@angular/router';
@@ -11,13 +12,14 @@ import { LoginGuardGuard } from '../services/service.index';
 const appPagesRouter: Routes = [
   { path: '',
     component: PagesComponent,
-    canActivate:[LoginGuardGuard],
+    canActivate: [LoginGuardGuard],
     children: [
       { path: 'dashboard', component: DashboardComponent, data: {titulo : 'Dashbaoard'}},
       { path: 'progress', component: ProgressComponent , data: {titulo : 'progress'}},
       { path: 'graficas1', component: Graficas1Component , data: {titulo : 'graficas'}},
       { path: 'promesas', component: PromesaComponent, data: {titulo : 'promesas'}},
       { path: 'account-settings', component: AccoutSettingsComponent , data: {titulo : 'Ajustes  del Tema'}},
+      { path: 'perfil', component: ProfileComponent , data: {titulo : 'Perfil de Usuario'}},
       { path: '', redirectTo: '/dashboard', pathMatch: 'full'}
 
     ]
