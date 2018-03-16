@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { PipesModule } from '../pipes/pipes.module';
 
 
+
 @NgModule({
   imports: [
     RouterModule,

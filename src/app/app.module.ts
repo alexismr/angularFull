@@ -14,6 +14,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 // servicios
 
 import { ServiceModule } from './services/service.module';
+import { DialogModule } from './shared/modal/dialog.module';
 
 
 
@@ -31,7 +32,8 @@ import { ServiceModule } from './services/service.module';
     PagesModule,
     FormsModule,
     ReactiveFormsModule,
-    ServiceModule
+    ServiceModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

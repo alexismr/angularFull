@@ -3,9 +3,11 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { UsuarioService } from '../services/service.index';
 import { Usuario } from '../model/usuario.model';
+import { MrDialogService } from '../shared/modal/services/mr-dialog.service';
 
 declare function init_plugins();
 declare const gapi: any;
+
 
 
 
@@ -22,7 +24,7 @@ export class LoginComponent implements OnInit {
   auth2: any;
 
   constructor(public route: Router,
-    public _usuarioService: UsuarioService
+    public _usuarioService: UsuarioService , public _modalService: MrDialogService
   ) { }
 
   ngOnInit() {
@@ -81,4 +83,16 @@ export class LoginComponent implements OnInit {
     .subscribe(ok => this.route.navigate(['/dashboard']));
 
   }
+
+
+  openModal() {
+
+    let text: string = ' Plain text, unformatted text \
+    Text file, a type of computer file opened by most text software\
+Text string, a sequence of characters manipulated by software\
+Text (Chrome app), a text editor for the Google Chrome web browser';
+   this._modalService.openMessage(text, 'Error', 'error');
+  }
+
+
 }
