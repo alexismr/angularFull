@@ -20,11 +20,13 @@ import { DialogModule } from './shared/modal/dialog.module';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

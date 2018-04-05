@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { LoginGuardGuard } from '../services/service.index';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
 const appPagesRouter: Routes = [
@@ -20,6 +21,9 @@ const appPagesRouter: Routes = [
       { path: 'promesas', component: PromesaComponent, data: {titulo : 'promesas'}},
       { path: 'account-settings', component: AccoutSettingsComponent , data: {titulo : 'Ajustes  del Tema'}},
       { path: 'perfil', component: ProfileComponent , data: {titulo : 'Perfil de Usuario'}},
+      // mantenimiento 
+
+      { path: 'usuarios', component: UsuariosComponent , data: {titulo : 'Mantenimientos Usuarios'}},
       { path: '', redirectTo: '/dashboard', pathMatch: 'full'}
 
     ]

@@ -26,6 +26,8 @@ export class BasicDialogComponent extends DialogComponent implements AfterViewIn
     @ViewChild('footerElem') footerElem: ElementRef;
     @ViewChild('actionButtonElem') actionButtonElem: ElementRef;
     @ViewChild('closeButtonElem') closeButtonElem: ElementRef;
+   
+   
     ngAfterViewInit() {
         if ( this.dialogAddClass !== undefined && this.dialogAddClass !== '' ) {
             this.renderer.setElementClass(this.dialogElem.nativeElement, this.dialogAddClass, true);

@@ -59,9 +59,10 @@ export abstract class DialogComponent {
     // Set input parameters to component properties.
     fillData(data: any = {}): Observable<any> {
         let keys = Object.keys(data);
+
         for (let idx = 0, length = keys.length; idx < length; idx++) {
             let key = keys[idx];
-            this[key] = data[key];
+           (<any>this)[key] = data[key];
         }
         return Observable.create((observer) => {
             this.observer = observer;
